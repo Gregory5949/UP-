@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Sarabun', sans-serif;
+}
+
+/* Container
+================ */
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header
+================ */
+.header {
+    padding: 8px 0;
+    background-color: #ffc000;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    font-size: 22px;
+    color: #000;
+}
+
+.header__logo span {
+    color: #fff;
+}
+
+/* Nav
+================ */
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__link {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+
+    transition: color .1s linear;
+    margin-left: 30px;
+}
+
+.nav__link:hover {
+    color: #fff;
+}
+
+/* Content
+================ */
+.content {
+    padding: 70px 0 50px;
+}
+
+.content__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content__title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+/* Card
+================ */
+.card {
+    padding: 10px 7px;
+    border: #000 2px solid;
+    border-radius: 5px;
+
+    max-width: 32%;
+    max-height: 400px;
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+/* Modal
+================ */
+.modal {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3;
+}
+
+.modal.active {
+    display: flex;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.modal__inner {
+    padding: 15px;
+
+    position: relative;
+    background-color: #ffc000;
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.modal__title {
+    text-align: center;
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+/* Dropzone
+================ */
+.dropzone {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    border: #000 2px dashed;
+    width: 450px;
+    height: 350px;
+}
+
+.dropzone svg {
+    opacity: 0;
+}
+
+/* Info
+================ */
+.info {
+    background-color: #000;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+    border-radius: 360px;
+    height: 40px;
+    z-index: 2;
+}
+
+.info:hover .info__text{
+    font-size: 16px;
+    padding-left: 12px;
+}
+
+.info__logo {
+    font-size: 25px;
+    color: #fff;
+    padding: 12px;
+}
+
+.info__text {
+    color: #fff;
+    font-size: 0;
+
+    transition: font-size .1s linear;
+}
