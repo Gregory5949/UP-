@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/7463bbcd54.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+    <title>Talking Cookies</title>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">Talking<span>Cookies</span></div>
+
+            <nav class="nav">
+                <a class="nav__link" href="#" id="upload__btn" title="Загрузить данные">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+                <a class="nav__link" href="#" id="download__btn" title="Скачать в формате df">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="container">
+        <div class="content__inner" id="content__inner">
+            <h1 class="content__title">Загрузите данные для построения графиков</h1>
+            <!-- Помещаем графики -->
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal__inner">
+        <div class="modal__title">Окно для загрузки данных</div>
+        <div class="modal__dropzone">
+            {{ dropzone.create(action='upload', ) }}
+            {{ dropzone.load_js() }}
+            {{
+            dropzone.config(max_files=1,
+            default_message='Перетащите файл',
+            allowed_file_custom=True,
+            allowed_file_type='.csv, .pkl')
+            }}
+        </div>
+    </div>
+</div>
+
+<a class="info" href="https://setupwindows.ru/browser/gde-xranyatsya-cookie" target="_blank">
+    <p class="info__text">Не знаешь где найти cookies?</p>
+    <p class="info__logo">
+        <i class="fa-solid fa-question"></i>
+    </p>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+</body>
+</html>
